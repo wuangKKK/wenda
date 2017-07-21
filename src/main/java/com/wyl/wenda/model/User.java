@@ -10,8 +10,7 @@ public class User {
     private String password;//用户密码
     private String salt;//给密码的杂质，保证安全性
     private String nickname;//昵称
-    private Date update;//用户创建的时间
-
+    private String token;//用户的登录凭证，要存进cookie中
 
     public int getId() {
         return id;
@@ -53,11 +52,11 @@ public class User {
         this.nickname = nickname;
     }
 
-    public Date getUpdate() {
-        return update;
+    public String getToken() {
+        return token;
     }
 
-    public void setUpdate(Date update) {
-        this.update = update;
+    public void setToken(String token) {
+        this.token = token;
     }
 }
