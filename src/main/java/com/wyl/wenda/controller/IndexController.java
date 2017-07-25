@@ -13,11 +13,25 @@ public class IndexController {
     @Autowired
     HostHolder hostHolder;
     @RequestMapping("/index")
-    public String login(Map<String,Object> map){
+    public String index(Map<String,Object> map){
         if(hostHolder.getUser()!=null){
             User user=hostHolder.getUser();
             map.put("user",user);
         }
         return "index";
+    }
+    @RequestMapping("/login")
+    public String login(Map<String,Object> map){
+        if (hostHolder.getUser()!=null){
+            User user=hostHolder.getUser();
+            map.put("user",user);
+            return"redirect:index.html";
+        }
+        return"login";
+    }
+    @RequestMapping("/register")
+    public String register(Map<String,Object> map){
+
+        return"register";
     }
 }

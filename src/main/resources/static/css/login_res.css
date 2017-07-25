@@ -1,0 +1,75 @@
+        body{
+			background: url("../images/img_4.jpg") no-repeat;
+			height: auto;
+			background-size: 100%;
+
+		}
+		.loginAndRegister_title,.index_nickname{
+			margin: 70px 0 0 1200px;
+		}
+		.login_title,.register_title,.symbol,.index_nickname_title,.logout_title{
+			text-decoration: none;
+			font:25px 微软雅黑;
+			color: #666666;
+			text-decoration: none;
+			font:25px 微软雅黑;
+			color: #666666;
+		}
+		.box,.title{
+			border-radius:15px;
+		}
+		input{
+			border-radius:5px;
+			
+			border:1px solid #aaa; 
+		}
+		.box{
+			border:2px solid #eeeeee;
+			width: 300px;
+			margin: 100px auto;
+			background: #fff;
+		}
+		.title{
+			color: #4E2F2F;
+			font-size: 25px;
+			width: 300px;
+			height: 50px;
+			background: url("../images/person_1.jpg");
+			margin-bottom: 20px;
+			text-align: center;
+			line-height: 50px;
+		}
+		.submit_cont{
+			border-radius:10px;
+			background: #FF7F00;
+			width: 100px;
+			height: 40px;
+			color: #eeeeee;
+			font-weight: 700;
+			font: 20px 微软雅黑;
+
+
+		}
+		.submit{
+			padding-left: 43px;
+			
+		}
+		.username,.password,.nickname{
+			text-align: center;
+			margin-bottom: 20px;
+		}
+		.name_title,.pass_title,.nick_title{
+			font-weight: 700;
+			display: inline-block;
+			width: 80px;
+			height: 30px;
+			color: #666666;
+		}
+		.name_cont,.pass_cont,.nick_cont{
+			display: inline-block;
+			width: 150px;
+			height: 20px;
+		}
+
+
+

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>注册</title>
+    <link rel="stylesheet" type="text/css" href="../css/login_res.css">
+</head>
+<body>
+<div class="loginAndRegister_title">
+    <a href="/login" class="login_title">登录</a>
+    <em class="symbol">/</em>
+    <a href="/register" class="register_title">注册</a>
+</div>
+<div class="box" style="height: 300px;">
+    <div class="title">注&nbsp册</div>
+    <p th:text="${msg}" style="color: red"></p>
+    <div class="form">
+        <form action="/register.action" method="post">
+            <div class="username">
+                <span class="name_title">用户名:</span>
+                <input type="text" name="username" class="name_cont">
+            </div>
+            <div class="password">
+                <span class="pass_title">密码:</span>
+                <input type="password" name="password" class="pass_cont">
+            </div>
+            <div class="nickname">
+                <span class="nick_title">用户昵称:</span>
+                <input type="text" name="nickname" class="nick_cont">
+            </div>
+            <div class="submit">
+                <input type="submit"  value="注册" class="submit_cont">
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

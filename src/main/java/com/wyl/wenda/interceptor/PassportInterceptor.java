@@ -1,7 +1,9 @@
 package com.wyl.wenda.interceptor;
 
+import com.wyl.wenda.dao.TokenDao;
 import com.wyl.wenda.dao.UserDao;
 import com.wyl.wenda.model.HostHolder;
+import com.wyl.wenda.model.Token;
 import com.wyl.wenda.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -16,7 +18,8 @@ import javax.servlet.http.HttpServletResponse;
 public class PassportInterceptor implements HandlerInterceptor {
     @Autowired
     private UserDao userDAO;
-
+    @Autowired
+    private TokenDao tokenDao;
     @Autowired
     private HostHolder hostHolder;
 
@@ -32,9 +35,12 @@ public class PassportInterceptor implements HandlerInterceptor {
             }
         }
         if (token != null) {
-            User user=new User();
-            user.setToken(token);
-            user = userDAO.selectByToken(user);
+            Token token1=tokenDao.selectByToken(token);
+            if(token1==null||token1.getStatus()!=0){
+                return true;
+            }
+            int userId=token1.getUserId();
+            User user=userDAO.selectUserById(userId);
             hostHolder.setUser(user);
         }
         return true;
